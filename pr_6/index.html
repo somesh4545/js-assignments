@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    input {
+      padding: 5px;
+      outline: none;
+      display: grid;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #000;
+      color: #fff;
+      transition: ease out;
+      transition-duration: 200;
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+    #result {
+      display: flex;
+    }
+    p {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<html>
+  <body style="padding: 20px">
+    <h1>Practical 6</h1>
+    <input id="str" placeholder="Enter string" />
+    <button id="btn" onclick="submit()">Convert</button>
+    <div id="result"></div>
+    <script>
+      function submit() {
+        var str = document.getElementById("str").value;
+        var result = document.getElementById("result");
+        var p = document.createElement("p");
+        p.innerHTML = "The interger value is: " + parseInt(str);
+        result.appendChild(p);
+      }
+    </script>
+  </body>
+</html>

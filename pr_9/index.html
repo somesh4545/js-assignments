@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    input {
+      padding: 5px;
+      outline: none;
+      display: grid;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #000;
+      color: #fff;
+      transition: ease out;
+      transition-duration: 200;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<html>
+  <body style="padding: 20px">
+    <h1>Practical 9</h1>
+    <input id="email" placeholder="Enter your email id " />
+    <input id="days" placeholder="Create a cookie for how many days " />
+    <button id="btn" onclick="submit()">Set cookie</button>
+    <button id="btn" onclick="get()">Get cookie</button>
+    <div id="result"></div>
+
+    <script>
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/index";
+      }
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == "") c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0)
+            return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+      function get() {
+        var result = document.getElementById("result");
+        var p = document.createElement("p");
+        p.innerHTML = "The cookie is: " + getCookie("email");
+        result.appendChild(p);
+      }
+      function submit() {
+        var c_name = "email";
+        var c_value = document.getElementById("email").value;
+        var c_days = document.getElementById("days").value;
+        setCookie(c_name, c_value, c_days);
+      }
+    </script>
+  </body>
+</html>

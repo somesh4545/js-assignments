@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<html>
+  <body style="padding: 20px">
+    <h1>Practical 12</h1>
+    <a href="" onMouseOver="onMouseOver()" onMouseOut="onMouseOut()">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sSzKJ-P9oak2_8q1-SKXgl0ecmHdnpqN-Q&usqp=CAU"
+        id="img"
+      />
+    </a>
+    <script>
+      var img = document.getElementById("img");
+      function onMouseOver() {
+        img.src =
+          "https://s14633.pcdn.co/wp-content/uploads/2016/08/security_linkhovercursor.jpg";
+      }
+      function onMouseOut() {
+        img.src =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sSzKJ-P9oak2_8q1-SKXgl0ecmHdnpqN-Q&usqp=CAU";
+      }
+    </script>
+  </body>
+</html>

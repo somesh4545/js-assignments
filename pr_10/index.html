@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    input {
+      padding: 5px;
+      outline: none;
+      display: grid;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #000;
+      color: #fff;
+      transition: ease out;
+      transition-duration: 200;
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<html>
+  <body style="padding: 20px">
+    <h1>Practical 10</h1>
+    <button id="btn" onclick="submit()">Get dimesnions</button>
+    <div id="result"></div>
+
+    <script>
+      function submit() {
+        var result = document.getElementById("result");
+        var p = document.createElement("p");
+        p.innerHTML = "The dimesions of window are: ";
+        var ol = document.createElement("list");
+        var width = document.createElement("li");
+        var height = document.createElement("li");
+        width.appendChild(
+          document.createTextNode("Width of window is: " + window.innerWidth)
+        );
+        height.appendChild(
+          document.createTextNode("Height of window is: " + window.innerHeight)
+        );
+        ol.appendChild(width);
+        ol.appendChild(height);
+        result.appendChild(p);
+        result.appendChild(ol);
+      }
+    </script>
+  </body>
+</html>
